@@ -1,3 +1,5 @@
+📅 Day 2 — 2025-07-17
+
 💻 Ethical Hacking Learning — Kali Linux + Netcat + TCP Shell
 📂 1. Root Directory Enumeration
 Listed /root, /var, and /opt directories using Python RCE payloads:

